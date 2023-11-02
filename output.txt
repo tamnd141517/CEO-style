@@ -1,0 +1,145 @@
+the period covers years:  2014 2015 2016 2017 2018 2019 2020 2021
+There are 80 firms in the dataset
+There are 640 observations in the dataset[1] TRUE
+   vars   n  mean    sd median trimmed   mad   min   max range skew kurtosis   se
+X1    1 640 23.24 12.93  21.95   22.75 14.47 -4.69 61.17 65.86 0.31    -0.59 0.51
+[1] 2016
+Overconfidence:   vars  n  mean    sd median trimmed   mad   min   max range  skew kurtosis   se
+X1    1 12 21.12 15.08  20.83    21.8 19.71 -3.45 38.93 42.38 -0.33    -1.42 4.35
+Non - overconfidence:   vars  n  mean    sd median trimmed  mad   min   max range skew kurtosis   se
+X1    1 68 21.97 13.67  17.72   21.38 14.7 -4.69 57.67 62.36 0.42    -0.75 1.66
+
+t test of coefficients:
+
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 15.939598  21.108590  0.7551   0.4526    
+CF           1.042620   0.073166 14.2500   <2e-16 ***
+size        -0.757767   1.404542 -0.5395   0.5912    
+MV          -0.165707   0.179950 -0.9209   0.3602    
+CG          -0.641692   0.338285 -1.8969   0.0618 .  
+TD          -5.126158   3.870792 -1.3243   0.1895    
+CF:TD        0.101491   0.148968  0.6813   0.4978    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+==========================================================
+                                  Dependent variable:     
+                              ----------------------------
+                                           I              
+                                default SE     robust SE  
+                                   (1)            (2)     
+----------------------------------------------------------
+CF                               1.043***      1.043***   
+                                 (0.069)        (0.073)   
+                                                          
+size                              -0.758        -0.758    
+                                 (1.712)        (1.405)   
+                                                          
+MV                                -0.166        -0.166    
+                                 (0.149)        (0.180)   
+                                                          
+CG                               -0.642**       -0.642*   
+                                 (0.285)        (0.338)   
+                                                          
+TD                                -5.126        -5.126    
+                                 (4.279)        (3.871)   
+                                                          
+CF:TD                             0.101          0.101    
+                                 (0.192)        (0.149)   
+                                                          
+Constant                          15.940        15.940    
+                                 (25.619)      (21.109)   
+                                                          
+----------------------------------------------------------
+Observations                        80            80      
+R2                                0.797          0.797    
+Adjusted R2                       0.780          0.780    
+Residual Std. Error (df = 73)     6.472          6.472    
+F Statistic (df = 6; 73)        47.650***      47.650***  
+==========================================================
+Note:                          *p<0.1; **p<0.05; ***p<0.01
+Linear hypothesis test
+
+Hypothesis:
+TD = 0
+CF:TD = 0
+
+Model 1: restricted model
+Model 2: I ~ CF + size + MV + CG + TD + CF:TD
+
+Note: Coefficient covariance matrix supplied.
+
+  Res.Df Df      F Pr(>F)
+1     75                 
+2     73  2 1.3259 0.2719
+The predicted investment percentage for overconfident CEOs: 21.12
+The predicted investment percentage for non- overconfident CEOs: 21.97
+The difference between these predicted values: 0.85
+Call:
+lm(formula = I ~ CF + CG + MV + TD + CF:TD + I(CF^2), data = mydata)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-15.0948  -3.8556  -0.5037   3.9468  17.2180 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)   
+(Intercept)  6.459497   2.274569   2.840  0.00584 **
+CF           0.743460   0.263575   2.821  0.00617 **
+CG          -0.611724   0.283586  -2.157  0.03429 * 
+MV          -0.177976   0.147102  -1.210  0.23023   
+TD          -5.104454   4.238158  -1.204  0.23232   
+I(CF^2)      0.007764   0.006539   1.187  0.23894   
+CF:TD        0.101824   0.189658   0.537  0.59298   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 6.419 on 73 degrees of freedom
+Multiple R-squared:  0.7999,	Adjusted R-squared:  0.7835 
+F-statistic: 48.64 on 6 and 73 DF,  p-value: < 2.2e-16
+
+
+t test of coefficients:
+
+              Estimate Std. Error t value Pr(>|t|)   
+(Intercept)  6.4594973  1.9304681  3.3461 0.001297 **
+CF           0.7434604  0.2244145  3.3129 0.001439 **
+CG          -0.6117241  0.3300797 -1.8533 0.067886 . 
+MV          -0.1779764  0.1738568 -1.0237 0.309360   
+TD          -5.1044540  4.1367718 -1.2339 0.221190   
+I(CF^2)      0.0077645  0.0052441  1.4806 0.143014   
+CF:TD        0.1018237  0.1585418  0.6423 0.522722   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+marginal effect of CF at CF = 10 and TD = 1: 1.000574
+marginal effect of CF at CF = 10 and TD = 0: 0.8987499
+marginal effect of CF at CF = 10 and TD = 1 (alternative way): 1.000574
+marginal effect of CF at CF = 10 and TD = 0 (alternative way): 0.8987499Linear hypothesis test
+
+Hypothesis:
+I(CF^2) = 0
+CF:TD = 0
+
+Model 1: restricted model
+Model 2: I ~ CF + CG + MV + TD + CF:TD + I(CF^2)
+
+Note: Coefficient covariance matrix supplied.
+
+  Res.Df Df      F Pr(>F)
+1     75                 
+2     73  2 1.1335 0.3275
+
+t test of coefficients:
+
+       Estimate Std. Error t value  Pr(>|t|)    
+CF     1.014380   0.027716 36.5986 < 2.2e-16 ***
+size  -0.128791   0.446697 -0.2883  0.773211    
+MV    -0.883537   0.470647 -1.8773  0.061012 .  
+CG    -0.714277   0.356726 -2.0023  0.045744 *  
+TD    -3.628456   1.299690 -2.7918  0.005425 ** 
+CF:TD  0.020518   0.043329  0.4736  0.636007    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
