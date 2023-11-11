@@ -1,1 +1,21 @@
-
+This project will test the overconfidence hypothesis using a different set of data. The variables included in the dataset are:
+<p/>year:
+Year of the observation
+<p/>firmid:
+A firm specific identifier
+<p/>I:
+Investment (%), defined as firm capital expenditures as a percentage of capital at the beginning of the year
+<p/>CF:
+Cash flow, defined as earnings before extraordinary items plus depreciation as a percentage of capital at the beginning of the year
+<p/>MV:
+Market value of assets over book value of assets at the beginning of the year (%)
+<p/>S:
+Percentage of total shares owned by CEO or CEO's family (%)
+<p/>size:
+Logarithm of assets (£) at the beginning of the year
+<p/>CG:
+Number of outside directors who are CEOs in other companies
+<p/>TC:
+Press based overconfidence measure, the number of articles mentioning CEO as "confident" or "optimistic"
+<p/>TD:
+A dummy variable equal to 1 if the majority of articles portrayed confidence and 0 otherwise
